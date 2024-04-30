@@ -1,0 +1,223 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+}
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #0b0a0d;
+    .logo{
+        padding: 10px;
+        a{color: greenyellow;}
+    }
+    .theme{
+        color: #fff;
+        position: absolute;
+        right: 0;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+.search-form{
+    display: flex;
+    align-items: center;
+    position: relative;
+    input{
+        padding: 7px;
+    }
+    button{
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}
+.navbar{
+    background: #ffc119;
+    .content{
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        a{
+            display: flex;
+            align-items: center;
+            height: 50px;
+            line-height: 50px;
+            padding: 10px;
+            color: #fff;
+        }
+        a:hover{
+            background: #333;
+        }
+    }
+}
+.container{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #121212;
+    .container-body{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        background: #222;
+    }
+    .container-top {
+        display: flex;
+        align-items: center;
+        background: #ffc119;
+        h3{
+            color: #fff;
+            padding: 5px 10px;
+        }
+        a{  
+            color: #fff;
+            background: #0b0a0d;
+            margin-left: auto;
+            padding: 5px 10px;
+        }
+    }
+
+    .anime-cards{
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        .anime-card{
+            box-shadow: inset 0 -100px 50px -50px rgba(32, 33, 37, 1);
+            width: 20%;
+            height: auto;
+            padding: 10px;
+            .anime-image{
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+            }
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .anime-card:hover img{
+            transform: scale(1.1);
+        }
+        a{
+            color: #fff;
+            text-align: center;
+        }
+        span{
+            color: #999;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+.anime-episode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    .video{
+    width: 700px;
+    height: 400px;
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+}
+.anime-infos{
+    hr{
+        width: 100%;
+    }
+}
+.anime-info{
+    display: flex;
+    padding: 10px;
+    color: #fff;
+    .anime-details{
+        padding: 10px;
+        display: flex;
+        .anime-detail{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+}
+.episode-head{h3{
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+}
+.anime-episode-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    gap: 10px;
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+    a{
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgb(53, 55, 61);
+        color: #fff;
+    }
+    a:hover{
+        background-color: #ffc119;
+    }
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        border-radius: 5px;
+        padding: 10px;
+        background: #ffc119;
+        margin: 10px;
+    }
+}
+.side-bar{
+    display: flex;
+    justify-content: center;
+    width: 17%;
+    background: #222;
+    height: auto;
+    overflow: auto;
+    .day{
+        width: 100%;
+    }
+    .day-top{
+        background:#ffc119 ;
+        h3{  
+            text-align: center;
+        padding: 5px 10px;
+        color: #fff;
+    }}
+    ol{
+        padding: 10px;
+        margin-left: 15px;
+        li{
+            padding: 10px;
+        }
+    }
+    a{
+        color: #ffc119;
+    }
+}
+.side-bar::-webkit-scrollbar{
+    width: 0;
+}
