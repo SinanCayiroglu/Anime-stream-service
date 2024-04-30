@@ -1,3 +1,4 @@
+
 const urlParams = new URLSearchParams(window.location.search)
 const fetchEpisode = async ()=>{
     try{
@@ -22,7 +23,7 @@ const generateAnimeEpisode = async (data)=>{
 
 fetchEpisode()
 
-const sidebar = async ()=>{
+const sideBar = async ()=>{
     try{
         let anime_id = urlParams.get("anime_id")
         if (anime_id.includes("-episode-")) {
@@ -47,4 +48,4 @@ const generateSidebar = async (data)=>{
     }).join("")
 }
 
-sidebar()
+sideBar()

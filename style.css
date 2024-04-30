@@ -8,6 +8,7 @@
 body{
     min-height: 100vh;
 }
+
 .header{
     width: 100%;
     display: flex;
@@ -63,17 +64,18 @@ body{
         }
     }
 }
+.container-body{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background: #222;
+}
 .container{
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     background: #121212;
-    .container-body{
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        background: #222;
-    }
+    
     .container-top {
         display: flex;
         align-items: center;
@@ -90,38 +92,39 @@ body{
         }
     }
 
-    .anime-cards{
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        .anime-card{
-            box-shadow: inset 0 -100px 50px -50px rgba(32, 33, 37, 1);
-            width: 20%;
-            height: auto;
-            padding: 10px;
-            .anime-image{
-                width: 100%;
-                height: 300px;
-                overflow: hidden;
-            }
-            img{
-                height: 100%;
-                width: 100%;
-            }
-        }
-        .anime-card:hover img{
-            transform: scale(1.1);
-        }
-        a{
-            color: #fff;
-            text-align: center;
-        }
-        span{
-            color: #999;
-            display: block;
-            text-align: center;
-        }
+    
+}
+.anime-cards{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.anime-card{
+    box-shadow: inset 0 -100px 50px -50px rgba(32, 33, 37, 1);
+    width: 19%;
+    height: auto;
+    padding: 10px;
+    .anime-image{
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
     }
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+.anime-card:hover img{
+    transform: scale(1.1);
+}
+a{
+    color: #fff;
+    text-align: center;
+}
+span{
+    color: #999;
+    display: block;
+    text-align: center;
 }
 .anime-episode{
     display: flex;
@@ -162,14 +165,18 @@ body{
     padding: 5px;
 }
 }
-.anime-episode-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
-    gap: 10px;
-    padding: 20px;
+.grid-container{
     height: 300px;
     overflow: auto;
+}
+.anime-episode-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    gap: 10px;
+    padding: 20px;
+    
     a{
+        text-align: center;
         border-radius: 5px;
         padding: 10px;
         background-color: rgb(53, 55, 61);
@@ -195,7 +202,7 @@ body{
     justify-content: center;
     width: 17%;
     background: #222;
-    height: auto;
+    height: 1000px;
     overflow: auto;
     .day{
         width: 100%;
@@ -209,7 +216,7 @@ body{
     }}
     ol{
         padding: 10px;
-        margin-left: 15px;
+        margin-left: 40px;
         li{
             padding: 10px;
         }
@@ -221,3 +228,24 @@ body{
 .side-bar::-webkit-scrollbar{
     width: 0;
 }
+.light-theme1{
+    background: #eef0f2;
+}
+.light-theme{
+    background: #fff;
+}
+.light-theme .day-top h3,
+.light-theme .anime-episode-grid a,
+.light-theme .episode-head h3,
+.light-theme .anime-info,
+.light-theme .anime-cards a,
+.light-theme .container h3,
+.light-theme .container a,
+.light-theme .navbar a
+{
+    color: black;
+}
+.light-theme .anime-episode-grid a{
+    background: #999;
+}
+

@@ -1,3 +1,4 @@
+
 const fetchRecentAnimes = async () => {
     try {
         const response = await fetch("https://api3.sinanime.workers.dev/recent/1");
@@ -24,7 +25,7 @@ const generateRecentAnime = async (data ) =>{
             <span>1 hour ago</span>
         </div>
 `
-    })
+    }).join('')
 }
 fetchRecentAnimes()
 
