@@ -42,8 +42,8 @@ const sidebar = async ()=>{
 const generateSidebar = async (data)=>{
     const sidebar = document.querySelector(".side-bar ol")
     const animes = data.results
-    sidebar.innerHTML = animes.map(anime=>{
-        return `<a href="${anime.episodes}"><li>${anime.episodes}</li></a>`
+    sidebar.innerHTML = animes.episodes.map(anime=>{
+        return `<a href="episode.html?anime_id=${anime[1]}"><li>Episode</li></a>`
     }).join("")
 }
 
