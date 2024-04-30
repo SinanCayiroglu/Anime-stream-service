@@ -27,7 +27,6 @@ const generateAnimeInfo = async (data) => {
                 <span>Anime genre: ${anime.genre}</span>
                 <span>Released: ${anime.released}</span>
                 <span>Status: ${anime.status}</span>
-                <span>${anime.ongoing}</span>
             </div>
         </div>
     </div>
@@ -66,17 +65,17 @@ const generateRecommendedAnimes = async (data) => {
         <div class="anime-card">
             <a href="anime.html?anime_id=${anime.title.userPreferred}">
                 <div class="anime-image">
-                    <img src="${anime.coverImage.medium}" alt="anime">
+                    <img src="${anime.coverImage.extraLarge}" alt="anime">
                 </div>
                 <div class="anime-detail">
                     ${anime.title.userPreferred}
                 </div>
             </a>
-            <span>1 hour ago</span>
+            <span></span>
         </div>`;
     }).join('');
 
-    animeInfo.innerHTML += `<div class="anime-cards">${recommendedHTML}</div>`; // Append recommendedHTML to animeInfo
+    animeInfo.innerHTML += `<h3 class="heading">Similiar Animes</h3><div class="anime-cards">${recommendedHTML}</div>`; // Append recommendedHTML to animeInfo
 }
 
 animeInfo();
