@@ -127,6 +127,20 @@ body{
     }
     
 }
+@media (max-width: 1000px){
+    .anime-cards{
+        .anime-card{
+            width: 30%;
+        }
+    }     
+}
+@media (max-width:600px){
+    .anime-cards{
+        .anime-card{
+            width: 45%;
+        }
+    }     
+}
 .anime-episode{
     display: flex;
     align-items: center;
@@ -232,6 +246,11 @@ body{
 }
 .side-bar::-webkit-scrollbar{
     width: 0;
+}
+@media (max-width:600px){
+    .side-bar{
+        width: 0px;
+    }
 }
 .light-theme1{
     background: #eef0f2;
