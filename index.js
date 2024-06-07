@@ -1,18 +1,26 @@
+let page = 1;
+let isLoading = false;
 
 const fetchRecentAnimes = async () => {
+    if (isLoading) return;
+    isLoading = true;
+
     try {
-        const response = await fetch("https://api3.sinanime.workers.dev/recent/1");
+        const response = await fetch(`https://api3.sinanime.workers.dev/recent/${page}`);
         const data = await response.json();
-        generateRecentAnime(data)
+        generateRecentAnime(data);
+        page++;
+        isLoading = false;
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        isLoading = false;
     }
 };
 
-const generateRecentAnime = async (data ) =>{
-    const animeCards = document.querySelector(".anime-cards")
-    const animes = data.results
-    animeCards.innerHTML = animes.map(anime=>{
+const generateRecentAnime = async (data) => {
+    const animeCards = document.querySelector(".anime-cards");
+    const animes = data.results;
+    animeCards.innerHTML += animes.map(anime => {
         return `
         <div class="anime-card">
             <a href="episode.html?anime_id=${anime.id}">
@@ -20,14 +28,25 @@ const generateRecentAnime = async (data ) =>{
                     <img src="${anime.image}" alt="anime">
                 </div>
                 <div class="anime-detail">
-                ${anime.id}</div>
+                    ${anime.id}
+                </div>
             </a>
-            <span>1 hour ago</span>
+            <span></span>
         </div>
-`
-    }).join('')
-}
-fetchRecentAnimes()
+        `;
+    }).join('');
+
+    // Attach Intersection Observer to the last anime card
+    const lastAnimeCard = animeCards.lastElementChild;
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            fetchRecentAnimes();
+        }
+    }, { threshold: 0.5 });
+    observer.observe(lastAnimeCard);
+};
+
+fetchRecentAnimes();
 
 const fetchSidebar = async()=>{
     try{
